@@ -47,7 +47,13 @@ public class Main {
         }
 
         int dMin = Integer.MAX_VALUE;
+        findMinimumDifference(n, pnt, pwe, result, dMin);
 
+        out = gson.toJson(result, LinkedHashMap.class);
+        System.out.println(out);
+    }
+
+    private static void findMinimumDifference(int n, int[] pnt, int[] pwe, Map<String, String> result, int dMin) {
         for (int i = 0; i <= pnt.length - n; i++) {
             for (int j = 0; j <= pwe.length - n; j++) {
 
@@ -63,8 +69,5 @@ public class Main {
                 }
             }
         }
-
-        out = gson.toJson(result, LinkedHashMap.class);
-        System.out.println(out);
     }
 }
