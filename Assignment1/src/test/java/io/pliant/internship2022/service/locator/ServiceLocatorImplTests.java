@@ -79,12 +79,6 @@ public class ServiceLocatorImplTests {
         serviceLocator.register(EmailService.class);
     }
 
-    @Test(expected = NotExistingServiceException.class)
-    public void unsuccessfullyRegistrationWithProvidedNotExistingServiceClass() {
-        ServiceLocatorImpl serviceLocator = new ServiceLocatorImpl();
-        serviceLocator.register(String.class);
-    }
-
     @Test
     public void successfullyGetByName() {
         ServiceLocatorImpl serviceLocator = new ServiceLocatorImpl();
